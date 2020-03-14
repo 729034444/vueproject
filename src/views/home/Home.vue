@@ -1,8 +1,16 @@
 <template>
     <div id="home">
+        <!-- 1.顶部导航栏 -->
         <nav-bar class="home-nav"><div slot="center">购物车</div></nav-bar>
+        <!-- 2.轮播图 -->
         <home-swiper :banners="banners"/>
+        <!-- 3.推荐 -->
         <recommend-view :recommends="recommends"/>
+        <!-- 4.本周流行 -->
+        <feature-view/>
+
+        <!-- 5.内部分类 -->
+        <tab-control :titles="['流行','新款','精选']"/>
     </div>
 </template>
 
@@ -10,6 +18,9 @@
 import NavBar from '../../components/common/navbar/NavBar'
 import HomeSwiper from './childComps/HomeSwiper'
 import RecommendView from './childComps/RecommendView'
+import FeatureView from './childComps/FeatureView'
+
+import TabControl from '../../components/content/tabControl/TabContol'
 
 import {getHomeMultidata} from "network/home"
 
@@ -19,7 +30,9 @@ export default {
     components: {
         NavBar,
         HomeSwiper,
-        RecommendView
+        RecommendView,
+        FeatureView,
+        TabControl
     },
     data(){
         return {
