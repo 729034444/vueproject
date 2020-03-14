@@ -10,7 +10,7 @@
         <feature-view/>
 
         <!-- 5.内部分类 -->
-        <tab-control :titles="['流行','新款','精选']"/>
+        <tab-control class="tab-control" :titles="['流行','新款','精选']"/>
     </div>
 </template>
 
@@ -54,5 +54,10 @@ export default {
     .home-nav {
         background-color: #2F4F4F;
         color: #fff;
+    }
+
+    .tab-control {
+        position: sticky;
+        top: 44px;
     }
 </style>
